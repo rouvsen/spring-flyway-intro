@@ -3,7 +3,7 @@ add plugin to gradle.build File, and write it inside of gradle.build Configurati
 databaseChangeLog:
 - changeSet:
   id: crete-eft-transfer
-  author: Firat Shahverdiyev
+  author: Rovshan Maharramov, cc: Firat Shahverdiyev
   objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
   changes:
   - createTable:
