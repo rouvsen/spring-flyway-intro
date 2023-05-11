@@ -5,9 +5,7 @@ import com.rouvsen.springflywayintro.apiversioning.dto.ProductV2;
 import com.rouvsen.springflywayintro.apiversioning.entity.Product;
 import com.rouvsen.springflywayintro.apiversioning.repo.ProductRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -24,8 +22,14 @@ public class ProductApi {
         this.productRepository = productRepository;
     }
 
-    //URI Versioning
+    @PostMapping("/v1/product")
+    public ResponseEntity<ProductV1> saveProductV1(@RequestBody ProductV1 productV1) {
+        Product product = new Product(productV1.getId(), productV1.getName());
+        Product saved = productRepository.save(product);
+        return ResponseEntity.of(Optional.of(new ProductV1(saved.getId(), saved.getName())));
+    }
 
+    //URI Versioning
     @GetMapping(value = "/v1/product")
     public ResponseEntity<List<ProductV1>> pathVersioningProductV1() {
         List<Product> all = productRepository.findAll();
