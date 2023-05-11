@@ -1,4 +1,4 @@
-package com.rouvsen.springflywayintro.entity;
+package com.rouvsen.springflywayintro.flyway.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

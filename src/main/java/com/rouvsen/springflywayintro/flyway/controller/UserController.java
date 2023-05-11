@@ -1,7 +1,7 @@
-package com.rouvsen.springflywayintro.controller;
+package com.rouvsen.springflywayintro.flyway.controller;
 
-import com.rouvsen.springflywayintro.entity.User;
-import com.rouvsen.springflywayintro.repository.UserRepository;
+import com.rouvsen.springflywayintro.flyway.entity.User;
+import com.rouvsen.springflywayintro.flyway.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
