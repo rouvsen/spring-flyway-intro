@@ -1,1 +1,2 @@
-update users set username='username' where username='test1username';
+update users set username='username'
+             where username='test1username';
